@@ -1,2 +1,4 @@
 # ARGA-AAAI23
-Abstract Reasoning with Graph Abstractions (ARGA) implementation
+The official implementation of the paper: [Graphs, Constraints, and Search for the Abstraction and Reasoning Corpus](https://arxiv.org/abs/2210.09880)
+
+Coming soon...
