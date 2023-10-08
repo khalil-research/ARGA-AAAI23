@@ -572,7 +572,7 @@ class Task:
     def parameters_generation(self, apply_filters_call, transform_sig):
         """
         given filter nodes and a transformation, generate parameters to be passed to the transformation
-        example: given filters for red nodes and move_nodes_max,
+        example: given filters for red nodes and move_node_max,
             return [up, down, left, right, get_relative_pos(red nodes, blue neighbors of red nodes), ...]
         :param apply_filters_call: the specific apply filter call to get the nodes to apply transformations to
         :param all_calls: all apply filter calls, this is used to generate the dynamic parameters
@@ -726,7 +726,7 @@ class Task:
                     no_new_objects = False
                     break
         if no_movements:
-            pruned_transformations = ["move_nodes", "extend_nodes", "move_nodes_max", "fill_rectangle", "add_border",
+            pruned_transformations = ["move_node", "extend_node", "move_node_max", "fill_rectangle", "add_border",
                                       "insert"]
             self.transformation_ops[self.abstraction] = [t for t in self.transformation_ops[self.abstraction] if
                                                          t not in pruned_transformations]
@@ -816,9 +816,9 @@ class Task:
             if constraint == "color_equal":
                 pruned_transformations = ["update_color"]
             elif constraint == "position_equal":
-                pruned_transformations = ["move_nodes", "extend_nodes", "move_nodes_max"]
+                pruned_transformations = ["move_node", "extend_node", "move_node_max"]
             elif constraint == "size_equal":
-                pruned_transformations = ["extend_nodes"]
+                pruned_transformations = ["extend_node"]
             transformations = [t for t in transformations if t not in pruned_transformations]
         return transformations
 
